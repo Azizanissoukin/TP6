@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Détection de mot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center h-screen bg-gray-100 text-gray-800">
+
+  <h1 class="text-2xl font-bold mb-4">Cliquez sur un mot ci-dessous</h1>
+
+  <p id="text" class="text-xl text-center space-x-2">
+    <!-- Chaque mot sera dans un span -->
+    <span class="cursor-pointer hover:text-blue-500" onclick="detectWord(this)">Bonjour</span>
+    <span class="cursor-pointer hover:text-blue-500" onclick="detectWord(this)">tout</span>
+    <span class="cursor-pointer hover:text-blue-500" onclick="detectWord(this)">le</span>
+    <span class="cursor-pointer hover:text-blue-500" onclick="detectWord(this)">monde</span>
+    <span class="cursor-pointer hover:text-blue-500" onclick="detectWord(this)">!</span>
+  </p>
+
+  <div id="result" class="mt-6 text-lg font-medium text-green-600"></div>
+
+  <script>
+    function detectWord(element) {
+      const mot = element.textContent;
+      document.getElementById('result').textContent = `🟢 Le mot "${mot}" a été détecté.`;
+    }
+  </script>
+
+</body>
+</html>
